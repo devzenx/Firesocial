@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3DDF81D0408E300C79C8D /* AppDelegate.swift */; };
+		99E3DDFB1D0408E300C79C8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3DDFA1D0408E300C79C8D /* ViewController.swift */; };
+		99E3DDFE1D0408E300C79C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFC1D0408E300C79C8D /* Main.storyboard */; };
+		99E3DE001D0408E300C79C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFF1D0408E300C79C8D /* Assets.xcassets */; };
+		99E3DE031D0408E300C79C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		99E3DDF51D0408E300C79C8D /* FireSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E3DDF81D0408E300C79C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		99E3DDFA1D0408E300C79C8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99E3DDFD1D0408E300C79C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		99E3DDFF1D0408E300C79C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		99E3DE021D0408E300C79C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		99E3DE041D0408E300C79C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99E3DDF21D0408E300C79C8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99E3DDEC1D0408E300C79C8D = {
+			isa = PBXGroup;
+			children = (
+				99E3DDF71D0408E300C79C8D /* FireSocial */,
+				99E3DDF61D0408E300C79C8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99E3DDF61D0408E300C79C8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99E3DDF51D0408E300C79C8D /* FireSocial.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99E3DDF71D0408E300C79C8D /* FireSocial */ = {
+			isa = PBXGroup;
+			children = (
+				99E3DDF81D0408E300C79C8D /* AppDelegate.swift */,
+				99E3DDFA1D0408E300C79C8D /* ViewController.swift */,
+				99E3DDFC1D0408E300C79C8D /* Main.storyboard */,
+				99E3DDFF1D0408E300C79C8D /* Assets.xcassets */,
+				99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */,
+				99E3DE041D0408E300C79C8D /* Info.plist */,
+			);
+			path = FireSocial;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99E3DDF41D0408E300C79C8D /* FireSocial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99E3DE071D0408E300C79C8D /* Build configuration list for PBXNativeTarget "FireSocial" */;
+			buildPhases = (
+				99E3DDF11D0408E300C79C8D /* Sources */,
+				99E3DDF21D0408E300C79C8D /* Frameworks */,
+				99E3DDF31D0408E300C79C8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FireSocial;
+			productName = FireSocial;
+			productReference = 99E3DDF51D0408E300C79C8D /* FireSocial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99E3DDED1D0408E300C79C8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = yusuf_kildan;
+				TargetAttributes = {
+					99E3DDF41D0408E300C79C8D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 99E3DDF01D0408E300C79C8D /* Build configuration list for PBXProject "FireSocial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 99E3DDEC1D0408E300C79C8D;
+			productRefGroup = 99E3DDF61D0408E300C79C8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99E3DDF41D0408E300C79C8D /* FireSocial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99E3DDF31D0408E300C79C8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E3DE031D0408E300C79C8D /* LaunchScreen.storyboard in Resources */,
+				99E3DE001D0408E300C79C8D /* Assets.xcassets in Resources */,
+				99E3DDFE1D0408E300C79C8D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99E3DDF11D0408E300C79C8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E3DDFB1D0408E300C79C8D /* ViewController.swift in Sources */,
+				99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		99E3DDFC1D0408E300C79C8D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99E3DDFD1D0408E300C79C8D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99E3DE021D0408E300C79C8D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99E3DE051D0408E300C79C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		99E3DE061D0408E300C79C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		99E3DE081D0408E300C79C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FireSocial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yusufkildan.FireSocial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		99E3DE091D0408E300C79C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FireSocial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yusufkildan.FireSocial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99E3DDF01D0408E300C79C8D /* Build configuration list for PBXProject "FireSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E3DE051D0408E300C79C8D /* Debug */,
+				99E3DE061D0408E300C79C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99E3DE071D0408E300C79C8D /* Build configuration list for PBXNativeTarget "FireSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E3DE081D0408E300C79C8D /* Debug */,
+				99E3DE091D0408E300C79C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99E3DDED1D0408E300C79C8D /* Project object */;
+}
