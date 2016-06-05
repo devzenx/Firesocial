@@ -8,7 +8,7 @@
 
 import UIKit
 import IBAnimatable
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController  {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var emailTextField: AnimatableTextField!
     @IBOutlet weak var passwordTextField: AnimatableTextField!
@@ -16,21 +16,26 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     
-    func keyboardWillShow(notification: NSNotification) {
-      logoImage.hidden = true
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-      logoImage.hidden = false
-    }
+  
     @IBAction func login(sender: AnimatableButton) {
-        
+        if let email = emailTextField.text where email != "" ,let password = passwordTextField.text where password != "" {
+            DataService.instance.REF_BASE.authUser(email, password: password, withCompletionBlock: { error, authData in
+                if error == nil {
+                    self.performSegueWithIdentifier("loginToMain", sender: nil)
+                }else if ERROR_WRONG_PASSWORD == error.code{
+                    print("Please enter correct password!")
+                }else if ERROR_INVALID_EMAIL == error.code {
+                    print("Plesase enter valied email!")
+                }else if ERROR_USER_NOT_EXIST == error.code {
+                    print("Please signUp before the login")
+                }else {
+                    print(error)
+                }
+            })
+        }
         
     }
     @IBAction func createAccount(sender: UIButton) {
@@ -39,5 +44,7 @@ class LoginViewController: UIViewController {
     }
     @IBAction func resetPassword(sender: UIButton) {
     }
+    
+  
 
 }

@@ -11,4 +11,8 @@ import Foundation
 //Error Codes 
 let ERROR_USER_NOT_EXIST = -8
 let ERROR_INVALID_EMAIL = -5
-let ERROR_WRONG_PASSWORD = -6 
+let ERROR_WRONG_PASSWORD = -6
+
+
+//UID
+let KEY_UID = "uid"

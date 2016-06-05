@@ -23,6 +23,7 @@
 		99E3DDFE1D0408E300C79C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFC1D0408E300C79C8D /* Main.storyboard */; };
 		99E3DE001D0408E300C79C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFF1D0408E300C79C8D /* Assets.xcassets */; };
 		99E3DE031D0408E300C79C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */; };
+		99F7D2031D04BB8800E4FFC7 /* UploadImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7D2021D04BB8800E4FFC7 /* UploadImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		99E3DDFF1D0408E300C79C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E3DE021D0408E300C79C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99E3DE041D0408E300C79C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99F7D2021D04BB8800E4FFC7 /* UploadImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageService.swift; sourceTree = "<group>"; };
 		A699378ECE89FF8DFF2DA593 /* Pods-FireSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.release.xcconfig"; sourceTree = "<group>"; };
 		B8B03B04DCE221CB1732FAD1 /* Pods-FireSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.debug.xcconfig"; sourceTree = "<group>"; };
 		EC91E0FBB2C15526988CEBC8 /* Pods_FireSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				99CAEF031D04366000DDFA3E /* DataService.swift */,
+				99F7D2021D04BB8800E4FFC7 /* UploadImageService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99CAEF111D043D4300DDFA3E /* Constants.swift in Sources */,
+				99F7D2031D04BB8800E4FFC7 /* UploadImageService.swift in Sources */,
 				99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */,
 				99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */,
 				99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */,
