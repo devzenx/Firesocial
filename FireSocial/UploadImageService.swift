@@ -12,11 +12,12 @@ class UploadImageService {
     static let instance = UploadImageService()
     var imageLink : String!
     func upload(image : UIImage , completion : (result : String) -> ()){
+        
         let url = NSURL(string: "https://post.imageshack.us/upload_api.php")!
-        //Alamofire request must be data format for Post Request
         let imageData = UIImageJPEGRepresentation(image, 0.2)!//1=No compression
         let keyData = "3IXRBAZW7ce8c1be6a16b5acd0841fa41eac3694".dataUsingEncoding(NSUTF8StringEncoding)!
         let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+        
         Alamofire.upload(.POST , url , multipartFormData : { multipartFormData in
             multipartFormData.appendBodyPart(data: imageData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
             multipartFormData.appendBodyPart(data: keyData, name: "key")
@@ -41,8 +42,6 @@ class UploadImageService {
             }
             
         }
-        
-        
-        
+       
     }
 }

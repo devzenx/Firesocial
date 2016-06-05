@@ -9,7 +9,6 @@
 import UIKit
 import IBAnimatable
 class LoginViewController: UIViewController  {
-    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var emailTextField: AnimatableTextField!
     @IBOutlet weak var passwordTextField: AnimatableTextField!
 
@@ -35,6 +34,8 @@ class LoginViewController: UIViewController  {
                     print(error)
                 }
             })
+        }else {
+            print("Fill all areas")
         }
         
     }
