@@ -7,21 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87D5D2C3345BACF2C5264015 /* Pods_FireSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC91E0FBB2C15526988CEBC8 /* Pods_FireSocial.framework */; };
+		99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99296E231D041BC2007CE6E5 /* LoginViewController.swift */; };
+		99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99296E251D04215E007CE6E5 /* SignUpViewController.swift */; };
+		99CAEF041D04366000DDFA3E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAEF031D04366000DDFA3E /* DataService.swift */; };
+		99CAEF051D043C3600DDFA3E /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99296E271D0430D4007CE6E5 /* Firebase.framework */; };
+		99CAEF071D043CC600DDFA3E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAEF061D043CC600DDFA3E /* libicucore.tbd */; };
+		99CAEF091D043CD100DDFA3E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAEF081D043CD100DDFA3E /* libc++.tbd */; };
+		99CAEF0B1D043CDA00DDFA3E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAEF0A1D043CDA00DDFA3E /* CFNetwork.framework */; };
+		99CAEF0D1D043CE100DDFA3E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAEF0C1D043CE100DDFA3E /* Security.framework */; };
+		99CAEF0F1D043CE700DDFA3E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAEF0E1D043CE700DDFA3E /* SystemConfiguration.framework */; };
+		99CAEF111D043D4300DDFA3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAEF101D043D4300DDFA3E /* Constants.swift */; };
+		99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAEF121D04434200DDFA3E /* MainViewController.swift */; };
 		99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3DDF81D0408E300C79C8D /* AppDelegate.swift */; };
-		99E3DDFB1D0408E300C79C8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3DDFA1D0408E300C79C8D /* ViewController.swift */; };
 		99E3DDFE1D0408E300C79C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFC1D0408E300C79C8D /* Main.storyboard */; };
 		99E3DE001D0408E300C79C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFF1D0408E300C79C8D /* Assets.xcassets */; };
 		99E3DE031D0408E300C79C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99296E231D041BC2007CE6E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		99296E251D04215E007CE6E5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		99296E271D0430D4007CE6E5 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		99CAEF031D04366000DDFA3E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		99CAEF061D043CC600DDFA3E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		99CAEF081D043CD100DDFA3E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		99CAEF0A1D043CDA00DDFA3E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		99CAEF0C1D043CE100DDFA3E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		99CAEF0E1D043CE700DDFA3E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		99CAEF101D043D4300DDFA3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		99CAEF121D04434200DDFA3E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		99E3DDF51D0408E300C79C8D /* FireSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E3DDF81D0408E300C79C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99E3DDFA1D0408E300C79C8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99E3DDFD1D0408E300C79C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99E3DDFF1D0408E300C79C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E3DE021D0408E300C79C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99E3DE041D0408E300C79C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A699378ECE89FF8DFF2DA593 /* Pods-FireSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.release.xcconfig"; sourceTree = "<group>"; };
+		B8B03B04DCE221CB1732FAD1 /* Pods-FireSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.debug.xcconfig"; sourceTree = "<group>"; };
+		EC91E0FBB2C15526988CEBC8 /* Pods_FireSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +53,81 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99CAEF0F1D043CE700DDFA3E /* SystemConfiguration.framework in Frameworks */,
+				99CAEF0D1D043CE100DDFA3E /* Security.framework in Frameworks */,
+				99CAEF0B1D043CDA00DDFA3E /* CFNetwork.framework in Frameworks */,
+				99CAEF091D043CD100DDFA3E /* libc++.tbd in Frameworks */,
+				99CAEF071D043CC600DDFA3E /* libicucore.tbd in Frameworks */,
+				99CAEF051D043C3600DDFA3E /* Firebase.framework in Frameworks */,
+				87D5D2C3345BACF2C5264015 /* Pods_FireSocial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FAE71B3EAAC7DC1788D513B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8B03B04DCE221CB1732FAD1 /* Pods-FireSocial.debug.xcconfig */,
+				A699378ECE89FF8DFF2DA593 /* Pods-FireSocial.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		99296E201D041B97007CE6E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				99296E231D041BC2007CE6E5 /* LoginViewController.swift */,
+				99296E251D04215E007CE6E5 /* SignUpViewController.swift */,
+				99CAEF121D04434200DDFA3E /* MainViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		99296E211D041B9F007CE6E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		99296E221D041BA5007CE6E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		99CADAAD00BE5601704AC392 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99CAEF0E1D043CE700DDFA3E /* SystemConfiguration.framework */,
+				99CAEF0C1D043CE100DDFA3E /* Security.framework */,
+				99CAEF0A1D043CDA00DDFA3E /* CFNetwork.framework */,
+				99CAEF081D043CD100DDFA3E /* libc++.tbd */,
+				99CAEF061D043CC600DDFA3E /* libicucore.tbd */,
+				99296E271D0430D4007CE6E5 /* Firebase.framework */,
+				EC91E0FBB2C15526988CEBC8 /* Pods_FireSocial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99CAEF021D04364E00DDFA3E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				99CAEF031D04366000DDFA3E /* DataService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		99E3DDEC1D0408E300C79C8D = {
 			isa = PBXGroup;
 			children = (
 				99E3DDF71D0408E300C79C8D /* FireSocial */,
 				99E3DDF61D0408E300C79C8D /* Products */,
+				7FAE71B3EAAC7DC1788D513B /* Pods */,
+				99CADAAD00BE5601704AC392 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +142,16 @@
 		99E3DDF71D0408E300C79C8D /* FireSocial */ = {
 			isa = PBXGroup;
 			children = (
+				99CAEF021D04364E00DDFA3E /* Service */,
+				99296E221D041BA5007CE6E5 /* Model */,
+				99296E211D041B9F007CE6E5 /* View */,
+				99296E201D041B97007CE6E5 /* Controller */,
 				99E3DDF81D0408E300C79C8D /* AppDelegate.swift */,
-				99E3DDFA1D0408E300C79C8D /* ViewController.swift */,
 				99E3DDFC1D0408E300C79C8D /* Main.storyboard */,
 				99E3DDFF1D0408E300C79C8D /* Assets.xcassets */,
 				99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */,
 				99E3DE041D0408E300C79C8D /* Info.plist */,
+				99CAEF101D043D4300DDFA3E /* Constants.swift */,
 			);
 			path = FireSocial;
 			sourceTree = "<group>";
@@ -71,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99E3DE071D0408E300C79C8D /* Build configuration list for PBXNativeTarget "FireSocial" */;
 			buildPhases = (
+				A17A29DABAF3F69F1466AEA3 /* Check Pods Manifest.lock */,
 				99E3DDF11D0408E300C79C8D /* Sources */,
 				99E3DDF21D0408E300C79C8D /* Frameworks */,
 				99E3DDF31D0408E300C79C8D /* Resources */,
+				34D1ECB10703E6D384895CFF /* Embed Pods Frameworks */,
+				A36E1C41111959CE64E6221D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +225,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34D1ECB10703E6D384895CFF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17A29DABAF3F69F1466AEA3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A36E1C41111959CE64E6221D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		99E3DDF11D0408E300C79C8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99E3DDFB1D0408E300C79C8D /* ViewController.swift in Sources */,
+				99CAEF111D043D4300DDFA3E /* Constants.swift in Sources */,
+				99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */,
+				99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */,
+				99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */,
 				99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */,
+				99CAEF041D04366000DDFA3E /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +396,13 @@
 		};
 		99E3DE081D0408E300C79C8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8B03B04DCE221CB1732FAD1 /* Pods-FireSocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FireSocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusufkildan.FireSocial;
@@ -260,8 +412,13 @@
 		};
 		99E3DE091D0408E300C79C8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A699378ECE89FF8DFF2DA593 /* Pods-FireSocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FireSocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusufkildan.FireSocial;
@@ -288,6 +445,7 @@
 				99E3DE091D0408E300C79C8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
