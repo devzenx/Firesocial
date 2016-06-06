@@ -7,10 +7,25 @@
 //
 
 import UIKit
+import IBAnimatable
+import Fusuma
 import Firebase
-class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
+import Alamofire
+
+class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource,FusumaDelegate{
+    
+    @IBOutlet weak var postBtn: AnimatableButton!
+    @IBOutlet weak var pickedImage: UIImageView!
+    @IBOutlet weak var postTxt: AnimatableTextField!
     @IBOutlet weak var tableView : UITableView!
+    
     var posts = [Post]()
+    var isPicked : Bool = false
+    var imagePicker : FusumaViewController!
+    var imageLink : String!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +48,13 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
             }
             
         }
+        imagePicker = FusumaViewController()
+        imagePicker.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(MainViewController.pickImage(_:)))
+        tap.numberOfTapsRequired = 1
+        pickedImage.addGestureRecognizer(tap)
+        pickedImage.userInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,5 +77,33 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
+    @IBAction func post(sender: AnimatableButton) {
+        if let postText = postTxt.text where postText != "" {
+            if isPicked {
+                UploadImageService.instance.upload(pickedImage.image!, completion: { (result) in
+                    let post = ["imageUrl" : result , "likes" : 0 ,"postDescription" : postText]
+                    DataService.instance.REF_POST.childByAutoId().setValue(post)
+                    self.isPicked = false
+                    self.pickedImage.image = UIImage(named: "camera")
+                    self.postTxt.text = ""
+                })
+            }
+        }
+    }
+    func pickImage(sender : UITapGestureRecognizer) {
+        presentViewController(imagePicker, animated: true, completion: nil)
+        isPicked = true
+    }
+    func fusumaImageSelected(image: UIImage) {
+        pickedImage.image = image
+    }
     
+    // When camera roll is not authorized, this method is called.
+    func fusumaCameraRollUnauthorized() {
+        
+        print("Camera roll unauthorized")
+    }
+    func postToFirebase(){
+    
+    }
 }

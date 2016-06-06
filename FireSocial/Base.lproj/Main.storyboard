@@ -464,12 +464,106 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="347" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J1r-TQ-iWC">
-                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPV-KQ-dSL" customClass="AnimatableView" customModule="IBAnimatable">
+                                <rect key="frame" x="0.0" y="64" width="320" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="eJL-Dn-KMZ">
+                                        <rect key="frame" x="196" y="11" width="59" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="gDG-gG-vAB"/>
+                                            <constraint firstAttribute="width" constant="59" id="kkv-Uw-5VC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI0-NK-E87" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="263" y="11" width="49" height="41"/>
+                                        <color key="backgroundColor" red="0.17254901959999999" green="0.38823529410000002" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="1mq-Nl-gOO"/>
+                                            <constraint firstAttribute="height" constant="41" id="PNf-LF-dvo"/>
+                                        </constraints>
+                                        <state key="normal" title="Post">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                                <point key="value" x="0.0" y="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="post:" destination="gXD-Nd-48X" eventType="touchUpInside" id="6hk-Af-MGy"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your post" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-4A-9Jh" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                        <rect key="frame" x="8" y="8" width="180" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.29999999999999999"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="XO0-4A-9Jh" firstAttribute="top" secondItem="vPV-KQ-dSL" secondAttribute="top" constant="8" id="1Qn-ab-VrM"/>
+                                    <constraint firstAttribute="bottom" secondItem="eJL-Dn-KMZ" secondAttribute="bottom" constant="3" id="8lh-gU-4ff"/>
+                                    <constraint firstAttribute="bottom" secondItem="XO0-4A-9Jh" secondAttribute="bottom" constant="8" id="JkM-TS-liG"/>
+                                    <constraint firstItem="NI0-NK-E87" firstAttribute="leading" secondItem="eJL-Dn-KMZ" secondAttribute="trailing" constant="8" id="S4L-ax-yso"/>
+                                    <constraint firstAttribute="height" constant="60" id="TGw-qB-WGK"/>
+                                    <constraint firstItem="eJL-Dn-KMZ" firstAttribute="leading" secondItem="XO0-4A-9Jh" secondAttribute="trailing" constant="8" id="ZSI-6I-4eu"/>
+                                    <constraint firstItem="XO0-4A-9Jh" firstAttribute="leading" secondItem="vPV-KQ-dSL" secondAttribute="leading" constant="8" id="evf-3d-biM"/>
+                                    <constraint firstAttribute="bottom" secondItem="NI0-NK-E87" secondAttribute="bottom" constant="8" id="gUz-8G-zx8"/>
+                                    <constraint firstAttribute="trailing" secondItem="NI0-NK-E87" secondAttribute="trailing" constant="8" id="vkM-SK-XAs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="347" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J1r-TQ-iWC">
+                                <rect key="frame" x="0.0" y="132" width="320" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="347" id="XtJ-Q6-xMG" customClass="PostTableViewCell" customModule="FireSocial" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="347"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="347"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XtJ-Q6-xMG" id="FwM-Rr-rjX">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="346.5"/>
@@ -487,7 +581,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline-bg" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-2e-GlB" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline-bg" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-2e-GlB" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                             <rect key="frame" x="0.0" y="31" width="296" height="200"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="200" id="XFm-FH-iOX"/>
@@ -625,80 +719,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPV-KQ-dSL" customClass="AnimatableView" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="64" width="320" height="60"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="eJL-Dn-KMZ">
-                                        <rect key="frame" x="196" y="11" width="59" height="46"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI0-NK-E87" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="263" y="11" width="49" height="41"/>
-                                        <color key="backgroundColor" red="0.17254901959999999" green="0.38823529410000002" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Post">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.80000000000000004"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                                                <point key="value" x="0.0" y="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your post" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-4A-9Jh" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                        <rect key="frame" x="8" y="8" width="180" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.29999999999999999"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="opacity">
-                                                <real key="value" value="0.80000000000000004"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                                        <point key="value" x="0.0" y="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vPV-KQ-dSL" secondAttribute="trailing" id="4lS-nf-Smy"/>
+                            <constraint firstItem="J1r-TQ-iWC" firstAttribute="leading" secondItem="yhj-cd-uqC" secondAttribute="leading" id="6zi-yi-EaN"/>
+                            <constraint firstItem="82B-FO-z65" firstAttribute="top" secondItem="J1r-TQ-iWC" secondAttribute="bottom" id="T9o-WM-eOw"/>
+                            <constraint firstItem="vPV-KQ-dSL" firstAttribute="leading" secondItem="yhj-cd-uqC" secondAttribute="leading" id="aV1-8I-VTy"/>
+                            <constraint firstItem="J1r-TQ-iWC" firstAttribute="top" secondItem="vPV-KQ-dSL" secondAttribute="bottom" constant="8" id="dRi-QU-YnI"/>
+                            <constraint firstAttribute="trailing" secondItem="J1r-TQ-iWC" secondAttribute="trailing" id="pR2-9M-FII"/>
+                            <constraint firstItem="vPV-KQ-dSL" firstAttribute="top" secondItem="sil-iE-bwj" secondAttribute="bottom" id="ual-kL-HCj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Firesocial" id="Qp8-mW-nCt">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="KVD-nD-WoX">
@@ -707,6 +738,9 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="pickedImage" destination="eJL-Dn-KMZ" id="Juh-ZS-jC3"/>
+                        <outlet property="postBtn" destination="NI0-NK-E87" id="gvw-Nl-fQK"/>
+                        <outlet property="postTxt" destination="XO0-4A-9Jh" id="XvC-0W-cP1"/>
                         <outlet property="tableView" destination="J1r-TQ-iWC" id="u6J-Md-cln"/>
                     </connections>
                 </viewController>
