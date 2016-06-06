@@ -9,6 +9,7 @@
 import UIKit
 import IBAnimatable
 import Kingfisher
+import Firebase
 
 class PostTableViewCell: UITableViewCell {
   
@@ -23,10 +24,14 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var commentIcon: UIImageView!
     @IBOutlet weak var commentLbl: UILabel!
     
-    
+    var likeRef : Firebase!
+    var post : Post!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        let tap = UITapGestureRecognizer(target: self, action: Selector("likeTapped:"))
+        tap.numberOfTapsRequired = 1
+        likeIcon.addGestureRecognizer(tap)
+        likeIcon.userInteractionEnabled = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -36,10 +41,12 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func configureCell(post : Post){
-        
+        self.post = post
+        likeRef = DataService.instance.REF_CURRENT_USER.childByAppendingPath("likes").childByAppendingPath(post.postKey)
         dispatch_async(dispatch_get_main_queue()) {
             self.postDescriptionLbl.text = post.postDescription
             self.likeLbl.text = "\(post.likes)"
+
         }
         mainImageView.kf_showIndicatorWhenLoading = true
         //profileImageView.kf_showIndicatorWhenLoading = true
@@ -51,8 +58,30 @@ class PostTableViewCell: UITableViewCell {
                                              completionHandler: { image, error, cacheType, imageURL in})
         }
         
-    
+        
+        
+        likeRef.observeSingleEventOfType(.Value) { (snapshot : FDataSnapshot!) in
+            if let doesNotExist = snapshot.value as? NSNull {
+                self.likeIcon.image = UIImage(named: "icon-upvote")
+            }else {
+                self.likeIcon.image = UIImage(named: "icon-upvote-active")
+            }
+        }
+
     }
-   
+    func likeTapped(sender : UIGestureRecognizer){
+        likeRef.observeSingleEventOfType(.Value) { (snapshot : FDataSnapshot!) in
+            if let doesNotExist = snapshot.value as? NSNull {
+                self.likeIcon.image = UIImage(named: "icon-upvote-active")
+                self.post.adjustLike(true)
+                self.likeRef.setValue(true)
+                
+            }else {
+                self.likeIcon.image = UIImage(named: "icon-upvote")
+                self.post.adjustLike(false)
+                self.likeRef.removeValue()
+            }
+        }
+    }
 
 }

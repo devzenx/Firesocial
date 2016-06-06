@@ -48,6 +48,7 @@ class Post {
     var postKey : String {
         return _postKey
     }
+
     init(description : String , imageUrl : String , username : String) {
         self._imageUrl = imageUrl
         self._postDescription = description
@@ -67,9 +68,16 @@ class Post {
         if let description = dictionary["postDescription"] as? String {
             self._postDescription = description
         }
-       
+       _postRef = DataService.instance.REF_POST.childByAppendingPath(self.postKey)
     }
     
-
+    func adjustLike(addLike : Bool){
+        if addLike {
+            _likes = _likes + 1
+        }else {
+            _likes = _likes - 1
+        }
+        _postRef.childByAppendingPath("likes").setValue(_likes)
+    }
 
 }

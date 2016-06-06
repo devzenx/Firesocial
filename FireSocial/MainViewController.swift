@@ -37,7 +37,7 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         DataService.instance.REF_POST.observeEventType(.Value) { (snapshot : FDataSnapshot!) in
             self.posts = []
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                for snap in snapshots {
+                for snap in snapshots.reverse() {
                     if let dict = snap.value as? Dictionary<String,AnyObject> {
                         let key = snap.key
                         let post = Post(postKey: key, dictionary: dict)
@@ -89,6 +89,8 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
                     self.postTxt.text = ""
                     KRProgressHUD.showSuccess(message: "Shared!")
                 })
+            }else {
+                   KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Select Image!")
             }
         }else {
             KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Fill All Areas!")

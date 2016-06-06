@@ -39,6 +39,10 @@ class SignUpViewController: UIViewController, FusumaDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+    }
     @IBAction func backToLogin(sender : UIButton) {
         performSegueWithIdentifier("signUpToLogin", sender: nil)
     }

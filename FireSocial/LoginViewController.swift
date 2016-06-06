@@ -26,6 +26,7 @@ class LoginViewController: UIViewController  {
             DataService.instance.REF_BASE.authUser(email, password: password, withCompletionBlock: { error, authData in
                 
                 if error == nil {
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: KEY_UID)
                     KRProgressHUD.showSuccess(message: "Success!")
                     self.performSegueWithIdentifier("loginToMain", sender: nil)
                     
