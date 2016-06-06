@@ -23,6 +23,8 @@
 		99E3DDFE1D0408E300C79C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFC1D0408E300C79C8D /* Main.storyboard */; };
 		99E3DE001D0408E300C79C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFF1D0408E300C79C8D /* Assets.xcassets */; };
 		99E3DE031D0408E300C79C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */; };
+		99E8B26B1D056EAA0072A314 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E8B26A1D056EAA0072A314 /* PostTableViewCell.swift */; };
+		99E8B26D1D0573A80072A314 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E8B26C1D0573A80072A314 /* Post.swift */; };
 		99F7D2031D04BB8800E4FFC7 /* UploadImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7D2021D04BB8800E4FFC7 /* UploadImageService.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		99E3DDFF1D0408E300C79C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E3DE021D0408E300C79C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99E3DE041D0408E300C79C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E8B26A1D056EAA0072A314 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		99E8B26C1D0573A80072A314 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		99F7D2021D04BB8800E4FFC7 /* UploadImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageService.swift; sourceTree = "<group>"; };
 		A699378ECE89FF8DFF2DA593 /* Pods-FireSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.release.xcconfig"; sourceTree = "<group>"; };
 		B8B03B04DCE221CB1732FAD1 /* Pods-FireSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireSocial/Pods-FireSocial.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		99296E211D041B9F007CE6E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				99E8B26A1D056EAA0072A314 /* PostTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 		99296E221D041BA5007CE6E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99E8B26C1D0573A80072A314 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -284,8 +290,10 @@
 				99CAEF111D043D4300DDFA3E /* Constants.swift in Sources */,
 				99F7D2031D04BB8800E4FFC7 /* UploadImageService.swift in Sources */,
 				99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */,
+				99E8B26B1D056EAA0072A314 /* PostTableViewCell.swift in Sources */,
 				99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */,
 				99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */,
+				99E8B26D1D0573A80072A314 /* Post.swift in Sources */,
 				99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */,
 				99CAEF041D04366000DDFA3E /* DataService.swift in Sources */,
 			);

@@ -60,18 +60,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.80000000000000004"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                                                <point key="value" x="0.0" y="2"/>
-                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iR-oo-qRQ" customClass="AnimatableTextField" customModule="IBAnimatable">
@@ -99,18 +87,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.80000000000000004"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                                                <point key="value" x="0.0" y="2"/>
-                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ae-vp-rNU" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -131,15 +107,6 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                 <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.80000000000000004"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                                                <point key="value" x="0.0" y="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -501,7 +468,7 @@
                                 <rect key="frame" x="0.0" y="72" width="320" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="347" id="XtJ-Q6-xMG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="347" id="XtJ-Q6-xMG" customClass="PostTableViewCell" customModule="FireSocial" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="347"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XtJ-Q6-xMG" id="FwM-Rr-rjX">
@@ -520,45 +487,20 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline-bg" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-2e-GlB">
+                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline-bg" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-2e-GlB" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                             <rect key="frame" x="0.0" y="31" width="296" height="200"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWW-dj-CIj">
-                                                    <rect key="frame" x="12" y="305" width="140" height="33"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybl-lO-ip5" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="33"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="33" id="IfV-rb-SrT"/>
-                                                                <constraint firstAttribute="width" constant="70" id="r2b-T1-zhb"/>
+                                                                <constraint firstAttribute="height" constant="200" id="XFm-FH-iOX"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            <state key="normal" title="813" image="icon-upvote">
-                                                                <color key="titleColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            </state>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="pop"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Y1-dc-OLo">
-                                                            <rect key="frame" x="70" y="0.0" width="70" height="33"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="70" id="930-fi-YFZ"/>
-                                                                <constraint firstAttribute="height" constant="33" id="tmH-OL-v0S"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            <state key="normal" title="244" image="icon-comment">
-                                                                <color key="titleColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                        </button>
+                                                        </imageView>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hi5-5Q-rmj">
@@ -578,6 +520,9 @@
                                                                     <real key="value" value="1"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="tintOpacity">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yusuf Kıldan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-rT-0Og">
@@ -608,22 +553,75 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="7Po-Z9-MO3">
+                                                    <rect key="frame" x="12" y="312" width="98" height="20"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OVn-LE-fse">
+                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="20"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-upvote" translatesAutoresizingMaskIntoConstraints="NO" id="hbw-Uf-Q3e">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="7c6-0n-a4a"/>
+                                                                        <constraint firstAttribute="width" constant="20" id="ibc-X1-ymc"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="147" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbK-pf-riK">
+                                                                    <rect key="frame" x="24" y="0.0" width="30" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                                    <color key="textColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-wC-bbK">
+                                                            <rect key="frame" x="63" y="0.0" width="35" height="20"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-comment" translatesAutoresizingMaskIntoConstraints="NO" id="qj3-Zf-pCH">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="20" id="MzH-dL-nR8"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="mpa-b8-KUd"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoi-2g-5F7">
+                                                                    <rect key="frame" x="24" y="0.0" width="11" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                                    <color key="textColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="DGi-lf-EJL" firstAttribute="top" secondItem="vBD-p2-9tu" secondAttribute="bottom" constant="10" id="03x-T7-huV"/>
                                                 <constraint firstAttribute="trailing" secondItem="DGi-lf-EJL" secondAttribute="trailing" constant="12" id="5Ld-xC-UBn"/>
-                                                <constraint firstItem="xWW-dj-CIj" firstAttribute="top" secondItem="vBD-p2-9tu" secondAttribute="bottom" constant="8" id="CVv-wz-mKM"/>
                                                 <constraint firstAttribute="trailing" secondItem="vBD-p2-9tu" secondAttribute="trailing" constant="12" id="DpQ-9H-Hap"/>
                                                 <constraint firstAttribute="bottom" secondItem="DGi-lf-EJL" secondAttribute="bottom" constant="8.5" id="JFE-QI-13z"/>
                                                 <constraint firstItem="hi5-5Q-rmj" firstAttribute="leading" secondItem="FwM-Rr-rjX" secondAttribute="leading" constant="12" id="LQu-Pv-qYJ"/>
+                                                <constraint firstItem="7Po-Z9-MO3" firstAttribute="leading" secondItem="FwM-Rr-rjX" secondAttribute="leading" constant="12" id="TUW-7B-YeV"/>
                                                 <constraint firstAttribute="trailing" secondItem="hi5-5Q-rmj" secondAttribute="trailing" constant="12" id="cGj-FF-1du"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Po-Z9-MO3" secondAttribute="bottom" constant="14.5" id="d1M-1G-86u"/>
                                                 <constraint firstItem="vBD-p2-9tu" firstAttribute="top" secondItem="hi5-5Q-rmj" secondAttribute="bottom" constant="8" id="ksd-LR-Ncc"/>
                                                 <constraint firstItem="vBD-p2-9tu" firstAttribute="leading" secondItem="FwM-Rr-rjX" secondAttribute="leading" constant="12" id="lPS-cN-EFY"/>
                                                 <constraint firstItem="hi5-5Q-rmj" firstAttribute="top" secondItem="FwM-Rr-rjX" secondAttribute="top" constant="8" id="n9v-IR-fMr"/>
-                                                <constraint firstAttribute="bottom" secondItem="xWW-dj-CIj" secondAttribute="bottom" constant="8" id="oRY-iF-I1S"/>
-                                                <constraint firstItem="xWW-dj-CIj" firstAttribute="leading" secondItem="FwM-Rr-rjX" secondAttribute="leading" constant="12" id="qOj-SA-ERr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="commentIcon" destination="qj3-Zf-pCH" id="TJF-Fc-aoJ"/>
+                                            <outlet property="commentLbl" destination="hoi-2g-5F7" id="DEC-yF-ETl"/>
+                                            <outlet property="likeIcon" destination="hbw-Uf-Q3e" id="ldl-VT-biz"/>
+                                            <outlet property="likeLbl" destination="AbK-pf-riK" id="9hf-SH-UbS"/>
+                                            <outlet property="mainImageView" destination="B5l-2e-GlB" id="sjd-VH-8QR"/>
+                                            <outlet property="moreBtn" destination="DGi-lf-EJL" id="gnF-4Q-IxW"/>
+                                            <outlet property="postDescriptionLbl" destination="syD-vR-SgJ" id="EQg-C0-MWO"/>
+                                            <outlet property="profileImageView" destination="MiM-cK-g05" id="fEg-Zm-6ia"/>
+                                            <outlet property="publishTimeLbl" destination="qAt-hP-qAE" id="Oop-hP-dxF"/>
+                                            <outlet property="usernameLbl" destination="ydZ-rT-0Og" id="1eh-6B-cBt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -641,7 +639,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="7"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                 <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -666,13 +664,16 @@
                                                 <color key="value" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.5"/>
+                                                <real key="value" value="0.29999999999999999"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="opacity">
                                                 <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -711,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRr-HD-Naf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="1048"/>
+            <point key="canvasLocation" x="747" y="1048"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Ep-lI-98Z">
@@ -723,7 +724,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.17254901959999999" green="0.38823529410000002" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -733,7 +734,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNg-7A-pv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="1048"/>
+            <point key="canvasLocation" x="364" y="1048"/>
         </scene>
     </scenes>
     <resources>

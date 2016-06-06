@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
           IQKeyboardManager.sharedManager().enable = true
+        if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: barFont], forState: UIControlState.Normal)
+        }
         return true
     }
 

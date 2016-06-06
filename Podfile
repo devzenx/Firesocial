@@ -8,5 +8,6 @@ pod 'IBAnimatable'
 pod 'Alamofire', '~> 3.4'
 pod 'IQKeyboardManager'
 pod 'Fusuma'
+pod 'Kingfisher', '~> 2.4'
 end
 
