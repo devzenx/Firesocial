@@ -11,6 +11,8 @@ import IBAnimatable
 import Fusuma
 import Firebase
 import Alamofire
+import KRProgressHUD
+
 class SignUpViewController: UIViewController, FusumaDelegate{
 
  
@@ -69,19 +71,20 @@ class SignUpViewController: UIViewController, FusumaDelegate{
                             })
                             
                         }else if ERROR_INVALID_EMAIL == error.code {
-                            print("Please enter valid Email")
+                            KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Invalid Email!")
                         }else if ERROR_WRONG_PASSWORD == error.code {
-                            print("This email registered before please login or use another mail")
+                              KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Wrong Password!")
                         }
                     }else {
-                       print("This email registered before please login or use another mail")
+                         KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Registered Email!")
+                       
                     }
                 })
                 }else {
-                print("Passwords are not same")
-            }
+                 KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Mismatched Passwords!")            }
         }else {
-            print("Please fill all areas!")
+             KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Fill All Areas!")
+           
         }
     }
     @IBAction func signIn(sender: UIButton) {

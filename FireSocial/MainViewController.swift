@@ -11,7 +11,7 @@ import IBAnimatable
 import Fusuma
 import Firebase
 import Alamofire
-
+import KRProgressHUD
 class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource,FusumaDelegate{
     
     @IBOutlet weak var postBtn: AnimatableButton!
@@ -78,6 +78,7 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         return posts.count
     }
     @IBAction func post(sender: AnimatableButton) {
+        KRProgressHUD.show(message: "Please wait!")
         if let postText = postTxt.text where postText != "" {
             if isPicked {
                 UploadImageService.instance.upload(pickedImage.image!, completion: { (result) in
@@ -86,8 +87,11 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
                     self.isPicked = false
                     self.pickedImage.image = UIImage(named: "camera")
                     self.postTxt.text = ""
+                    KRProgressHUD.showSuccess(message: "Shared!")
                 })
             }
+        }else {
+            KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Fill All Areas!")
         }
     }
     func pickImage(sender : UITapGestureRecognizer) {
@@ -103,7 +107,5 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         
         print("Camera roll unauthorized")
     }
-    func postToFirebase(){
-    
-    }
+  
 }

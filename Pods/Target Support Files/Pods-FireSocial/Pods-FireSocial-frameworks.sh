@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-FireSocial/Fusuma.framework"
   install_framework "Pods-FireSocial/IBAnimatable.framework"
   install_framework "Pods-FireSocial/IQKeyboardManager.framework"
+  install_framework "Pods-FireSocial/KRProgressHUD.framework"
   install_framework "Pods-FireSocial/Kingfisher.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -95,5 +96,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-FireSocial/Fusuma.framework"
   install_framework "Pods-FireSocial/IBAnimatable.framework"
   install_framework "Pods-FireSocial/IQKeyboardManager.framework"
+  install_framework "Pods-FireSocial/KRProgressHUD.framework"
   install_framework "Pods-FireSocial/Kingfisher.framework"
 fi

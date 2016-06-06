@@ -4,6 +4,7 @@ PODS:
   - IBAnimatable (2.2)
   - IQKeyboardManager (4.0.3)
   - Kingfisher (2.4.1)
+  - KRProgressHUD (1.4.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - IBAnimatable
   - IQKeyboardManager
   - Kingfisher (~> 2.4)
+  - KRProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
@@ -18,5 +20,6 @@ SPEC CHECKSUMS:
   IBAnimatable: 41ddf0b307ebec241d5dd510f472c51fb7fe519b
   IQKeyboardManager: be9695ffc5a52077deb4847608f338771022d6d1
   Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
+  KRProgressHUD: 9c356e2acb593dc86fe2c71c4fbf5d80c918f805
 
 COCOAPODS: 0.39.0

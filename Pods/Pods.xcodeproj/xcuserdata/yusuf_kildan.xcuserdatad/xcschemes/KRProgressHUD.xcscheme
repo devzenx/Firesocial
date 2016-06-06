@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D7832F80178F7A2840FD294C'
-               BlueprintName = 'Pods-FireSocial'
+               BlueprintIdentifier = '7367ED4B8216ED3D192DA4B6'
+               BlueprintName = 'KRProgressHUD'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_FireSocial.framework'>
+               BuildableName = 'KRProgressHUD.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
