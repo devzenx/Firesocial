@@ -32,8 +32,8 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 347
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 347
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
         DataService.instance.REF_POST.observeEventType(.Value) { (snapshot : FDataSnapshot!) in
             self.posts = []
@@ -85,6 +85,7 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         }
         return posts.count
     }
+
     @IBAction func post(sender: AnimatableButton) {
         KRProgressHUD.show(message: "Please wait!")
         if let postText = postTxt.text where postText != "" {
@@ -95,12 +96,9 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
                     postRef.setValue(post)
                     postRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                         if let postId = snapshot.key {
-                            DataService.instance.REF_CURRENT_USER.childByAppendingPath("posts").childByAppendingPath(postId).setValue(true)
+                            DataService.instance.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(postId).setValue(true)
                         }
                     })
-                    
-                    
-                    
                     
                     self.isPicked = false
                     self.pickedImage.image = UIImage(named: "camera")
@@ -108,11 +106,21 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
                     KRProgressHUD.showSuccess(message: "Shared!")
                 })
             }else {
-                   KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Select Image!")
+                  self.showErrorAlert("Select Image!")
             }
         }else {
-            KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Fill All Areas!")
+            self.showErrorAlert("Fill All Areas!")
         }
+    }
+   
+    
+    @IBAction func logout(sender: UIBarButtonItem) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
+        presentViewController(controller, animated: true, completion: nil)
+
+        
     }
     func pickImage(sender : UITapGestureRecognizer) {
         presentViewController(imagePicker, animated: true, completion: nil)
@@ -122,19 +130,13 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         pickedImage.image = image
     }
     
-    // When camera roll is not authorized, this method is called.
     func fusumaCameraRollUnauthorized() {
-        
-        print("Camera roll unauthorized")
+        self.showErrorAlert("Camera roll unauthorized")
     }
     
-    @IBAction func logout(sender: UIBarButtonItem) {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
-        presentViewController(controller, animated: true, completion: nil)
-
+    func showErrorAlert(message : String) {
         
+        KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: message)
     }
   
 }

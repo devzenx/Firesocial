@@ -9,10 +9,11 @@
 import UIKit
 import IBAnimatable
 import KRProgressHUD
+
 class LoginViewController: UIViewController  {
+    
     @IBOutlet weak var emailTextField: AnimatableTextField!
     @IBOutlet weak var passwordTextField: AnimatableTextField!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController  {
     }
   
     @IBAction func login(sender: AnimatableButton) {
-        KRProgressHUD.show(message: "Loading...")
+        KRProgressHUD.show(progressHUDStyle: KRProgressHUDStyle.Black, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Loading", image: nil)
         if let email = emailTextField.text where email != "" ,let password = passwordTextField.text where password != "" {
             DataService.instance.REF_BASE.authUser(email, password: password, withCompletionBlock: { error, authData in
                 
@@ -37,28 +38,30 @@ class LoginViewController: UIViewController  {
                     self.performSegueWithIdentifier("loginToMain", sender: nil)
                     
                 }else if ERROR_WRONG_PASSWORD == error.code{
-                    KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Wrong Password!")
+                   self.showErrorAlert("Wrong Password!")
                 }else if ERROR_INVALID_EMAIL == error.code {
-                    KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Invalid Email!")
+                    self.showErrorAlert("Invalid Email!")
                 }else if ERROR_USER_NOT_EXIST == error.code {
-                    KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "SignUp Before Login!")
+                   self.showErrorAlert("SignUp Before Login!")
                 }else {
                     print(error)
                 }
                 
             })
         }else {
-            KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Fill All Areas!")
+            KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Fill All Areas!")
         }
         
     }
+    
     @IBAction func createAccount(sender: UIButton) {
         performSegueWithIdentifier("loginToSignUp", sender: nil)
-        
     }
     @IBAction func resetPassword(sender: UIButton) {
     }
     
-  
+    func showErrorAlert(message : String){
+     KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: message)
+    }
 
 }

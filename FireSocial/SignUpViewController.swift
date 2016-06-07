@@ -15,17 +15,22 @@ import KRProgressHUD
 
 class SignUpViewController: UIViewController, FusumaDelegate{
 
- 
-   
+    
+    //OUTLETS
     @IBOutlet weak var userImage: AnimatableImageView!
     @IBOutlet weak var pickedUserImage: UIImageView!
     @IBOutlet weak var nameTextField: AnimatableTextField!
     @IBOutlet weak var emailTextField: AnimatableTextField!
     @IBOutlet weak var passwordTextField: AnimatableTextField!
     @IBOutlet weak var passwordTextField2: AnimatableTextField!
+    
+    //VARIABLES
     var isPicked : Bool = false
     var imagePicker : FusumaViewController!
     var imageLink : String!
+    
+    
+    //FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.pickImage(_:)))
@@ -39,14 +44,18 @@ class SignUpViewController: UIViewController, FusumaDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
     }
+    
     @IBAction func backToLogin(sender : UIButton) {
         performSegueWithIdentifier("signUpToLogin", sender: nil)
     }
+    
     @IBAction func signUp(sender: UIButton) {
+        KRProgressHUD.show(progressHUDStyle: KRProgressHUDStyle.Black, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "User Creating!", image: nil)
         if let email = emailTextField.text where email != "" ,
             let password = passwordTextField.text where password != "" ,
             let password2 = passwordTextField2.text where password2 != "",
@@ -61,11 +70,13 @@ class SignUpViewController: UIViewController, FusumaDelegate{
                                 if error == nil {
                                     DataService.instance.REF_BASE.authUser(email, password: password, withCompletionBlock: { error, authData in
                                         if error == nil {
+                                            
                                             UploadImageService.instance.upload(image, completion: { (result) in
                                                 let user = ["username" : username , "provider" : authData.provider! , "email"  : email , "profileImageUrl" : result]
                                                 DataService.instance.createUser(authData.uid, user: user)
                                                 NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: KEY_UID)
                                             })
+                                            KRProgressHUD.showSuccess()
                                             self.performSegueWithIdentifier("signUpToMain", sender: nil)
                                         }else {
                                             print(error)
@@ -76,29 +87,35 @@ class SignUpViewController: UIViewController, FusumaDelegate{
                             })
                             
                         }else if ERROR_INVALID_EMAIL == error.code {
-                            KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Invalid Email!")
+                           self.showErrorAlert("Invalid Email!")
                         }else if ERROR_WRONG_PASSWORD == error.code {
-                              KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Wrong Password!")
+                              self.showErrorAlert("Wrong Password!")
                         }
                     }else {
-                         KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Registered Email!")
+                       self.showErrorAlert("Registered Email!")
                        
                     }
                 })
                 }else {
-                 KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Mismatched Passwords!")            }
+                    self.showErrorAlert("Mismatched Passwords!")
+            
+            }
         }else {
-             KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: "Fill All Areas!")
-           
+            if userImage.image == nil {
+            self.showErrorAlert("Select Profile Image")
+            }else {
+                self.showErrorAlert("Fill All Areas!")}
         }
     }
+    
     @IBAction func signIn(sender: UIButton) {
          performSegueWithIdentifier("signUpToLogin", sender: self)
     }
+    
     func pickImage(sender : UITapGestureRecognizer) {
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
-    //ImagePicker Delegate Functions
+  
     func fusumaImageSelected(image: UIImage) {
         
         userImage.hidden = false
@@ -108,12 +125,15 @@ class SignUpViewController: UIViewController, FusumaDelegate{
         print("Image selected")
     }
     
-    // When camera roll is not authorized, this method is called.
+    
     func fusumaCameraRollUnauthorized() {
-        
-        print("Camera roll unauthorized")
+      self.showErrorAlert("Camera roll unauthorized")
     }
     
+    func showErrorAlert(message : String) {
+    
+         KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: UIFont(name: "Avenir-Light", size: 13.0), message: message)
+    }
   
  
 

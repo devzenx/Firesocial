@@ -8,39 +8,29 @@
 
 import Foundation
 
+
 class User {
-    private var _username: String!
-    private var _profileImageUrl: String!
-    private var _email: String!
+    private var _username : String!
+    private var _profileImage : String!
+    private var _email : String!
     
-    var username: String {
+    var username : String {
         if _username == nil {
             _username = ""
         }
         return _username
     }
     
-    var profileImgUrl: String {
-        return _profileImageUrl
-    }
-    var email : String {
-        return _email 
+    var profileImage: String {
+        if _profileImage == nil {
+            _profileImage = ""
+        }
+        return _profileImage
     }
     
-    init(dic : Dictionary<String,AnyObject>){
-        if let username = dic["username"] as? String {
-            self._username = username
-        }
-        
-        if let profileImageUrl = dic["profileImageUrl"] as? String {
-            self._profileImageUrl = profileImageUrl
-        }
-        
-        
-        if let email = dic["email"] as? String {
-            self._email = email
-        }
-
+    init(email: String, profileImage: String, username: String,posts : Dictionary<String,Bool>?) {
+        self._username = username
+        self._profileImage = profileImage
+        self._email = email
     }
-
 }

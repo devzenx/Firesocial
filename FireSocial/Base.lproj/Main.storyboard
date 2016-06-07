@@ -481,7 +481,7 @@
                                             <constraint firstAttribute="width" constant="49" id="1mq-Nl-gOO"/>
                                             <constraint firstAttribute="height" constant="41" id="PNf-LF-dvo"/>
                                         </constraints>
-                                        <state key="normal" title="Post">
+                                        <state key="normal" title="Share">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -562,7 +562,7 @@
                                 <rect key="frame" x="0.0" y="132" width="320" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="347" id="XtJ-Q6-xMG" customClass="PostTableViewCell" customModule="FireSocial" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="XtJ-Q6-xMG" customClass="PostTableViewCell" customModule="FireSocial" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="347"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XtJ-Q6-xMG" id="FwM-Rr-rjX">
@@ -572,7 +572,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vBD-p2-9tu">
                                                     <rect key="frame" x="12" y="66" width="296" height="231"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I love Adana!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syD-vR-SgJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                                  " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syD-vR-SgJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="296" height="31"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="w2H-82-lX9"/>
@@ -584,7 +584,7 @@
                                                         <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-2e-GlB" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                             <rect key="frame" x="0.0" y="31" width="296" height="200"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="200" id="XFm-FH-iOX"/>
+                                                                <constraint firstAttribute="height" constant="200" id="sOP-Dc-J0B"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -593,6 +593,9 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="0.0"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
@@ -600,7 +603,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hi5-5Q-rmj">
                                                     <rect key="frame" x="12" y="8" width="296" height="50"/>
                                                     <subviews>
-                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jakelin" translatesAutoresizingMaskIntoConstraints="NO" id="MiM-cK-g05" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-icon-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="MiM-cK-g05" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="H28-dh-NHH"/>
@@ -608,7 +611,7 @@
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" red="0.17254901959999999" green="0.38823529410000002" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="value" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="1"/>
@@ -619,7 +622,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yusuf Kıldan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-rT-0Og">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="                             " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-rT-0Og">
                                                             <rect key="frame" x="58" y="0.0" width="110" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="4Lv-7R-LVa"/>
@@ -628,7 +631,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-hP-qAE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5 min." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-hP-qAE">
                                                             <rect key="frame" x="176" y="0.0" width="120" height="50"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                             <color key="textColor" red="0.58823529409999997" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -639,22 +642,11 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju4-UQ-vey">
                                                     <rect key="frame" x="275" y="312" width="21" height="22"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGi-lf-EJL" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                    <rect key="frame" x="277" y="307" width="31" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="IQH-Sl-iEG"/>
-                                                        <constraint firstAttribute="width" constant="31" id="Qw5-he-DxR"/>
-                                                    </constraints>
-                                                    <state key="normal" image="more"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="7Po-Z9-MO3">
-                                                    <rect key="frame" x="12" y="312" width="98" height="20"/>
+                                                    <rect key="frame" x="12" y="312" width="106" height="20"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OVn-LE-fse">
-                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-upvote" translatesAutoresizingMaskIntoConstraints="NO" id="hbw-Uf-Q3e" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -666,8 +658,8 @@
                                                                         <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="147" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbK-pf-riK">
-                                                                    <rect key="frame" x="24" y="0.0" width="30" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbK-pf-riK">
+                                                                    <rect key="frame" x="24" y="0.0" width="26" height="20"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -675,7 +667,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-wC-bbK">
-                                                            <rect key="frame" x="63" y="0.0" width="35" height="20"/>
+                                                            <rect key="frame" x="59" y="0.0" width="47" height="20"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-comment" translatesAutoresizingMaskIntoConstraints="NO" id="qj3-Zf-pCH">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -684,8 +676,8 @@
                                                                         <constraint firstAttribute="height" constant="20" id="mpa-b8-KUd"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoi-2g-5F7">
-                                                                    <rect key="frame" x="24" y="0.0" width="11" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoi-2g-5F7">
+                                                                    <rect key="frame" x="24" y="0.0" width="23" height="20"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -694,19 +686,31 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGi-lf-EJL" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                    <rect key="frame" x="277" y="307" width="31" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="8Qf-e7-yF1"/>
+                                                        <constraint firstAttribute="width" constant="31" id="m0v-gx-axo"/>
+                                                    </constraints>
+                                                    <state key="normal" image="more"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DGi-lf-EJL" firstAttribute="top" secondItem="vBD-p2-9tu" secondAttribute="bottom" constant="10" id="03x-T7-huV"/>
-                                                <constraint firstAttribute="trailing" secondItem="DGi-lf-EJL" secondAttribute="trailing" constant="12" id="5Ld-xC-UBn"/>
                                                 <constraint firstAttribute="trailing" secondItem="vBD-p2-9tu" secondAttribute="trailing" constant="12" id="DpQ-9H-Hap"/>
-                                                <constraint firstAttribute="bottom" secondItem="DGi-lf-EJL" secondAttribute="bottom" constant="8.5" id="JFE-QI-13z"/>
                                                 <constraint firstItem="hi5-5Q-rmj" firstAttribute="leading" secondItem="FwM-Rr-rjX" secondAttribute="leading" constant="12" id="LQu-Pv-qYJ"/>
                                                 <constraint firstItem="7Po-Z9-MO3" firstAttribute="leading" secondItem="FwM-Rr-rjX" secondAttribute="leading" constant="12" id="TUW-7B-YeV"/>
+                                                <constraint firstAttribute="bottom" secondItem="DGi-lf-EJL" secondAttribute="bottom" constant="8.5" id="Xdi-Mc-IUU"/>
                                                 <constraint firstAttribute="trailing" secondItem="hi5-5Q-rmj" secondAttribute="trailing" constant="12" id="cGj-FF-1du"/>
                                                 <constraint firstAttribute="bottom" secondItem="7Po-Z9-MO3" secondAttribute="bottom" constant="14.5" id="d1M-1G-86u"/>
+                                                <constraint firstAttribute="trailing" secondItem="DGi-lf-EJL" secondAttribute="trailing" constant="12" id="iQj-El-BUh"/>
                                                 <constraint firstItem="vBD-p2-9tu" firstAttribute="top" secondItem="hi5-5Q-rmj" secondAttribute="bottom" constant="8" id="ksd-LR-Ncc"/>
                                                 <constraint firstItem="vBD-p2-9tu" firstAttribute="leading" secondItem="FwM-Rr-rjX" secondAttribute="leading" constant="12" id="lPS-cN-EFY"/>
+                                                <constraint firstItem="DGi-lf-EJL" firstAttribute="top" secondItem="vBD-p2-9tu" secondAttribute="bottom" constant="10" id="mEi-Dq-I0L"/>
                                                 <constraint firstItem="hi5-5Q-rmj" firstAttribute="top" secondItem="FwM-Rr-rjX" secondAttribute="top" constant="8" id="n9v-IR-fMr"/>
+                                                <constraint firstItem="DGi-lf-EJL" firstAttribute="centerY" secondItem="7Po-Z9-MO3" secondAttribute="centerY" id="oOZ-YG-uqf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -804,16 +808,16 @@
         <image name="email" width="21" height="18"/>
         <image name="icon-comment" width="17" height="15"/>
         <image name="icon-upvote" width="18" height="16"/>
-        <image name="jakelin" width="110" height="110"/>
         <image name="login-bg" width="375" height="667"/>
         <image name="logout" width="20" height="21"/>
         <image name="menu" width="21" height="17"/>
         <image name="more" width="75" height="75"/>
         <image name="password" width="20" height="22"/>
         <image name="preview_low-poly-texture-28.png" width="960" height="640"/>
+        <image name="user-icon-placeholder" width="256" height="256"/>
         <image name="username" width="20" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S9g-0y-xBg"/>
+        <segue reference="tMA-Ue-b1I"/>
     </inferredMetricsTieBreakers>
 </document>

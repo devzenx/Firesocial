@@ -27,6 +27,7 @@ class PostTableViewCell: UITableViewCell {
     var likeRef : Firebase!
     var post : Post!
     var user : User!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let tap = UITapGestureRecognizer(target: self, action: #selector(PostTableViewCell.likeTapped(_:)))
@@ -37,48 +38,47 @@ class PostTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureCell(post : Post){
         self.post = post
          self.setUserProfile()
-        likeRef = DataService.instance.REF_CURRENT_USER.childByAppendingPath("likes").childByAppendingPath(post.postKey)
-        dispatch_async(dispatch_get_main_queue()) {
-            self.postDescriptionLbl.text = post.postDescription
-            self.likeLbl.text = "\(post.likes)"
-           
-
-        }
-        mainImageView.kf_showIndicatorWhenLoading = true
-        //profileImageView.kf_showIndicatorWhenLoading = true
         
-        if let mainImageUrl = NSURL(string: post.imageUrl) {
-            mainImageView.kf_setImageWithURL(mainImageUrl, placeholderImage: nil,
-                                             optionsInfo: [.Transition(ImageTransition.Fade(1))],
-                                             progressBlock: { receivedSize, totalSize in},
-                                             completionHandler: { image, error, cacheType, imageURL in})
-        }
-        
-        
-        
-        likeRef.observeSingleEventOfType(.Value) { (snapshot : FDataSnapshot!) in
-            if let doesNotExist = snapshot.value as? NSNull {
-                self.likeIcon.image = UIImage(named: "icon-upvote")
-            }else {
-                self.likeIcon.image = UIImage(named: "icon-upvote-active")
+            likeRef = DataService.instance.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.postDescriptionLbl.text = post.postDescription
+                self.likeLbl.text = "\(post.likes)"
+            }
+            mainImageView.kf_showIndicatorWhenLoading = true
+            if let mainImageUrl = NSURL(string: post.imageUrl) {
+                mainImageView.kf_setImageWithURL(mainImageUrl, placeholderImage: nil,
+                                                 optionsInfo: [.Transition(ImageTransition.Fade(1))],
+                                                 progressBlock: { receivedSize, totalSize in},
+                                                 completionHandler: { image, error, cacheType, imageURL in})
             }
             
-           
-        }
+            
+            
+            likeRef.observeSingleEventOfType(.Value) { (snapshot : FDataSnapshot!) in
+                if (snapshot.value as? NSNull) != nil {
+                    self.likeIcon.image = UIImage(named: "icon-upvote")
+                }else {
+                    self.likeIcon.image = UIImage(named: "icon-upvote-active")
+                }
+                
+                
+            }
 
+        
+        
     }
     func likeTapped(sender : UIGestureRecognizer){
+        self.likeIcon.fadeOutIn()
         likeRef.observeSingleEventOfType(.Value) { (snapshot : FDataSnapshot!) in
-            if let doesNotExist = snapshot.value as? NSNull {
+            if (snapshot.value as? NSNull) != nil {
                 self.likeIcon.image = UIImage(named: "icon-upvote-active")
                 self.post.adjustLike(true)
+                
                 self.likeRef.setValue(true)
                 
             }else {
@@ -88,22 +88,26 @@ class PostTableViewCell: UITableViewCell {
             }
         }
     }
-    func setUserProfile(){
-        //print(self.post.userId)
-        DataService.instance.REF_USER.childByAppendingPath(self.post.userId).observeEventType(.Value) { (snapshot : FDataSnapshot!) in
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                for snap in snapshots.reverse() {
-                    if let dict = snap.value as? Dictionary<String,AnyObject> {
-                       self.user = User(dic: dict)
-                        
-                    }
+    func setUserProfile() {
+        
+        DataService.instance.REF_USER.childByAppendingPath(self.post.userId).observeEventType(.Value, withBlock: { (snapshot) in
+            if let user = snapshot.value as? Dictionary<String, AnyObject> {
+                
+                self.user = User(email: user["email"] as! String, profileImage: user["profileImageUrl"] as! String, username: user["username"] as! String,posts : user["posts"] as? Dictionary<String,Bool>)
+                self.profileImageView.kf_showIndicatorWhenLoading = true
+                
+                if let profileImageUrl = NSURL(string: self.user.profileImage) {
+                    self.profileImageView.kf_setImageWithURL(profileImageUrl, placeholderImage: nil,
+                        optionsInfo: [.Transition(ImageTransition.Fade(1))],
+                        progressBlock: { receivedSize, totalSize in},
+                        completionHandler: { image, error, cacheType, imageURL in})
                 }
-             
+                
+                
+                self.usernameLbl.text = self.user.username
             }
-
-            
-        }
-
-    
+        })
     }
+    
+
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 //Error Codes 
 let ERROR_USER_NOT_EXIST = -8
 let ERROR_INVALID_EMAIL = -5
@@ -16,3 +16,6 @@ let ERROR_WRONG_PASSWORD = -6
 
 //UID
 let KEY_UID = "uid"
+
+//Alert
+let ERROR_ALERT_FONT = UIFont(name: "Avenir-Light", size: 13.0)
