@@ -13,25 +13,30 @@ import Firebase
 import Alamofire
 import KRProgressHUD
 class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource,FusumaDelegate{
-    
+    //OUTLETS
     @IBOutlet weak var noPostLbl: UILabel!
     @IBOutlet weak var postBtn: AnimatableButton!
     @IBOutlet weak var pickedImage: UIImageView!
     @IBOutlet weak var postTxt: AnimatableTextField!
     @IBOutlet weak var tableView : UITableView!
     
+    //VARIABLES
     var posts = [Post]()
     var isPicked : Bool = false
     var imagePicker : FusumaViewController!
     var imageLink : String!
+    var refreshController : UIRefreshControl!
     
     
-    
+    //FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         tableView.delegate = self
         tableView.dataSource = self
+        refreshController = UIRefreshControl()
+        refreshController.addTarget(self, action: #selector(MainViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshController)
         //tableView.estimatedRowHeight = 347
         //tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -137,6 +142,11 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
     func showErrorAlert(message : String) {
         
         KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: message)
+    }
+    
+    func refresh(sender : AnyObject) {
+        tableView.reloadData()
+        refreshController.endRefreshing()
     }
   
 }

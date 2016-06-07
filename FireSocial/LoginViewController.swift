@@ -58,6 +58,24 @@ class LoginViewController: UIViewController  {
         performSegueWithIdentifier("loginToSignUp", sender: nil)
     }
     @IBAction func resetPassword(sender: UIButton) {
+        let alert = UIAlertController(title: "Reset Your Password", message: "Enter your email to reset your password", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Email"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Reset", style: UIAlertActionStyle.Default, handler: { action in
+            
+            let ref = DataService.instance.REF_BASE
+            ref.resetPasswordForUser(alert.textFields![0].text!, withCompletionBlock: { error in
+                if error == nil {
+                    KRProgressHUD.showSuccess(progressHUDStyle: KRProgressHUDStyle.Black, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Check your email")
+                }else if ERROR_INVALID_EMAIL == error.code {
+                    self.showErrorAlert("Invalid Email")
+                }
+            })
+            
+        }))
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func showErrorAlert(message : String){
