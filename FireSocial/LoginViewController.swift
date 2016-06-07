@@ -16,9 +16,14 @@ class LoginViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
+            self.performSegueWithIdentifier("loginToMain", sender: nil)
+        }
+    }
   
     @IBAction func login(sender: AnimatableButton) {
         KRProgressHUD.show(message: "Loading...")
@@ -26,6 +31,7 @@ class LoginViewController: UIViewController  {
             DataService.instance.REF_BASE.authUser(email, password: password, withCompletionBlock: { error, authData in
                 
                 if error == nil {
+                    print(authData.uid)
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: KEY_UID)
                     KRProgressHUD.showSuccess(message: "Success!")
                     self.performSegueWithIdentifier("loginToMain", sender: nil)

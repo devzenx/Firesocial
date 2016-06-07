@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="FireSocial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="FireSocial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -40,7 +40,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="V9f-IB-23o"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -67,7 +67,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="kE3-cJ-ZNm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -581,7 +581,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline-bg" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-2e-GlB" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-2e-GlB" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                             <rect key="frame" x="0.0" y="31" width="296" height="200"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="200" id="XFm-FH-iOX"/>
@@ -620,13 +620,16 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yusuf Kıldan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-rT-0Og">
-                                                            <rect key="frame" x="58" y="0.0" width="105" height="50"/>
+                                                            <rect key="frame" x="58" y="0.0" width="110" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="4Lv-7R-LVa"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-hP-qAE">
-                                                            <rect key="frame" x="171" y="0.0" width="125" height="50"/>
+                                                            <rect key="frame" x="176" y="0.0" width="120" height="50"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                             <color key="textColor" red="0.58823529409999997" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -653,12 +656,15 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OVn-LE-fse">
                                                             <rect key="frame" x="0.0" y="0.0" width="54" height="20"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-upvote" translatesAutoresizingMaskIntoConstraints="NO" id="hbw-Uf-Q3e">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-upvote" translatesAutoresizingMaskIntoConstraints="NO" id="hbw-Uf-Q3e" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="7c6-0n-a4a"/>
                                                                         <constraint firstAttribute="width" constant="20" id="ibc-X1-ymc"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="147" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbK-pf-riK">
                                                                     <rect key="frame" x="24" y="0.0" width="30" height="20"/>
@@ -719,14 +725,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Post To View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFw-ej-cMn">
+                                <rect key="frame" x="98" y="273" width="125" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="TNw-iD-uIZ"/>
+                                    <constraint firstAttribute="width" constant="125" id="vIm-yr-eWI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vPV-KQ-dSL" secondAttribute="trailing" id="4lS-nf-Smy"/>
                             <constraint firstItem="J1r-TQ-iWC" firstAttribute="leading" secondItem="yhj-cd-uqC" secondAttribute="leading" id="6zi-yi-EaN"/>
+                            <constraint firstItem="YFw-ej-cMn" firstAttribute="centerX" secondItem="yhj-cd-uqC" secondAttribute="centerX" id="SyX-tZ-V9a"/>
                             <constraint firstItem="82B-FO-z65" firstAttribute="top" secondItem="J1r-TQ-iWC" secondAttribute="bottom" id="T9o-WM-eOw"/>
                             <constraint firstItem="vPV-KQ-dSL" firstAttribute="leading" secondItem="yhj-cd-uqC" secondAttribute="leading" id="aV1-8I-VTy"/>
                             <constraint firstItem="J1r-TQ-iWC" firstAttribute="top" secondItem="vPV-KQ-dSL" secondAttribute="bottom" constant="8" id="dRi-QU-YnI"/>
+                            <constraint firstItem="YFw-ej-cMn" firstAttribute="centerY" secondItem="yhj-cd-uqC" secondAttribute="centerY" id="j52-5h-aD7"/>
                             <constraint firstAttribute="trailing" secondItem="J1r-TQ-iWC" secondAttribute="trailing" id="pR2-9M-FII"/>
                             <constraint firstItem="vPV-KQ-dSL" firstAttribute="top" secondItem="sil-iE-bwj" secondAttribute="bottom" id="ual-kL-HCj"/>
                         </constraints>
@@ -735,9 +753,16 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="KVD-nD-WoX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout" id="2jS-02-CKB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logout:" destination="gXD-Nd-48X" id="tah-uD-NCI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="noPostLbl" destination="YFw-ej-cMn" id="xTZ-N6-c3y"/>
                         <outlet property="pickedImage" destination="eJL-Dn-KMZ" id="Juh-ZS-jC3"/>
                         <outlet property="postBtn" destination="NI0-NK-E87" id="gvw-Nl-fQK"/>
                         <outlet property="postTxt" destination="XO0-4A-9Jh" id="XvC-0W-cP1"/>
@@ -781,11 +806,11 @@
         <image name="icon-upvote" width="18" height="16"/>
         <image name="jakelin" width="110" height="110"/>
         <image name="login-bg" width="375" height="667"/>
+        <image name="logout" width="20" height="21"/>
         <image name="menu" width="21" height="17"/>
         <image name="more" width="75" height="75"/>
         <image name="password" width="20" height="22"/>
         <image name="preview_low-poly-texture-28.png" width="960" height="640"/>
-        <image name="timeline-bg" width="375" height="200"/>
         <image name="username" width="20" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>

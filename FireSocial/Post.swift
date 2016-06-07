@@ -16,6 +16,7 @@ class Post {
     private var _username : String!
     private var _postKey : String!
     private var _postRef : Firebase!
+    private var _userId : String!
     
     var postDescription : String {
         if _postDescription == nil {
@@ -48,7 +49,9 @@ class Post {
     var postKey : String {
         return _postKey
     }
-
+    var userId : String {
+        return _userId
+    }
     init(description : String , imageUrl : String , username : String) {
         self._imageUrl = imageUrl
         self._postDescription = description
@@ -67,6 +70,10 @@ class Post {
         
         if let description = dictionary["postDescription"] as? String {
             self._postDescription = description
+        }
+        
+        if let userId = dictionary["user"] as? String {
+            self._userId = userId
         }
        _postRef = DataService.instance.REF_POST.childByAppendingPath(self.postKey)
     }

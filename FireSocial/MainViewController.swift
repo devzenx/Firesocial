@@ -14,6 +14,7 @@ import Alamofire
 import KRProgressHUD
 class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource,FusumaDelegate{
     
+    @IBOutlet weak var noPostLbl: UILabel!
     @IBOutlet weak var postBtn: AnimatableButton!
     @IBOutlet weak var pickedImage: UIImageView!
     @IBOutlet weak var postTxt: AnimatableTextField!
@@ -75,6 +76,13 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         }
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if posts.count == 0 {
+            noPostLbl.hidden = false
+            tableView.hidden = true
+        }else {
+            noPostLbl.hidden = true
+            tableView.hidden = false
+        }
         return posts.count
     }
     @IBAction func post(sender: AnimatableButton) {
@@ -82,8 +90,18 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         if let postText = postTxt.text where postText != "" {
             if isPicked {
                 UploadImageService.instance.upload(pickedImage.image!, completion: { (result) in
-                    let post = ["imageUrl" : result , "likes" : 0 ,"postDescription" : postText]
-                    DataService.instance.REF_POST.childByAutoId().setValue(post)
+                    let post = ["imageUrl" : result , "likes" : 0 ,"postDescription" : postText,"user" : NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)!]
+                    let postRef = DataService.instance.REF_POST.childByAutoId()
+                    postRef.setValue(post)
+                    postRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                        if let postId = snapshot.key {
+                            DataService.instance.REF_CURRENT_USER.childByAppendingPath("posts").childByAppendingPath(postId).setValue(true)
+                        }
+                    })
+                    
+                    
+                    
+                    
                     self.isPicked = false
                     self.pickedImage.image = UIImage(named: "camera")
                     self.postTxt.text = ""
@@ -108,6 +126,15 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
     func fusumaCameraRollUnauthorized() {
         
         print("Camera roll unauthorized")
+    }
+    
+    @IBAction func logout(sender: UIBarButtonItem) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
+        presentViewController(controller, animated: true, completion: nil)
+
+        
     }
   
 }

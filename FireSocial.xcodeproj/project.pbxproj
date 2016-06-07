@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87D5D2C3345BACF2C5264015 /* Pods_FireSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC91E0FBB2C15526988CEBC8 /* Pods_FireSocial.framework */; };
+		9900BBDA1D063B7F00EBD706 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9900BBD91D063B7F00EBD706 /* User.swift */; };
 		99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99296E231D041BC2007CE6E5 /* LoginViewController.swift */; };
 		99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99296E251D04215E007CE6E5 /* SignUpViewController.swift */; };
 		99CAEF041D04366000DDFA3E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAEF031D04366000DDFA3E /* DataService.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9900BBD91D063B7F00EBD706 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		99296E231D041BC2007CE6E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		99296E251D04215E007CE6E5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		99296E271D0430D4007CE6E5 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				99E8B26C1D0573A80072A314 /* Post.swift */,
+				9900BBD91D063B7F00EBD706 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */,
 				99E8B26D1D0573A80072A314 /* Post.swift in Sources */,
 				99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */,
+				9900BBDA1D063B7F00EBD706 /* User.swift in Sources */,
 				99CAEF041D04366000DDFA3E /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -64,6 +64,7 @@ class SignUpViewController: UIViewController, FusumaDelegate{
                                             UploadImageService.instance.upload(image, completion: { (result) in
                                                 let user = ["username" : username , "provider" : authData.provider! , "email"  : email , "profileImageUrl" : result]
                                                 DataService.instance.createUser(authData.uid, user: user)
+                                                NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: KEY_UID)
                                             })
                                             self.performSegueWithIdentifier("signUpToMain", sender: nil)
                                         }else {

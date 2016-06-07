@@ -19,16 +19,17 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postDescriptionLbl: UILabel!
     @IBOutlet weak var mainImageView: AnimatableImageView!
     @IBOutlet weak var moreBtn: AnimatableButton!
-    @IBOutlet weak var likeIcon: UIImageView!
+    @IBOutlet weak var likeIcon: AnimatableImageView!
     @IBOutlet weak var likeLbl: UILabel!
     @IBOutlet weak var commentIcon: UIImageView!
     @IBOutlet weak var commentLbl: UILabel!
     
     var likeRef : Firebase!
     var post : Post!
+    var user : User!
     override func awakeFromNib() {
         super.awakeFromNib()
-        let tap = UITapGestureRecognizer(target: self, action: Selector("likeTapped:"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PostTableViewCell.likeTapped(_:)))
         tap.numberOfTapsRequired = 1
         likeIcon.addGestureRecognizer(tap)
         likeIcon.userInteractionEnabled = true
@@ -42,10 +43,12 @@ class PostTableViewCell: UITableViewCell {
     
     func configureCell(post : Post){
         self.post = post
+         self.setUserProfile()
         likeRef = DataService.instance.REF_CURRENT_USER.childByAppendingPath("likes").childByAppendingPath(post.postKey)
         dispatch_async(dispatch_get_main_queue()) {
             self.postDescriptionLbl.text = post.postDescription
             self.likeLbl.text = "\(post.likes)"
+           
 
         }
         mainImageView.kf_showIndicatorWhenLoading = true
@@ -66,6 +69,8 @@ class PostTableViewCell: UITableViewCell {
             }else {
                 self.likeIcon.image = UIImage(named: "icon-upvote-active")
             }
+            
+           
         }
 
     }
@@ -83,5 +88,22 @@ class PostTableViewCell: UITableViewCell {
             }
         }
     }
+    func setUserProfile(){
+        //print(self.post.userId)
+        DataService.instance.REF_USER.childByAppendingPath(self.post.userId).observeEventType(.Value) { (snapshot : FDataSnapshot!) in
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots.reverse() {
+                    if let dict = snap.value as? Dictionary<String,AnyObject> {
+                       self.user = User(dic: dict)
+                        
+                    }
+                }
+             
+            }
 
+            
+        }
+
+    
+    }
 }
