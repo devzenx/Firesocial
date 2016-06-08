@@ -18,11 +18,11 @@ class SignUpViewController: UIViewController, FusumaDelegate{
     
     //OUTLETS
     @IBOutlet weak var userImage: AnimatableImageView!
-    @IBOutlet weak var pickedUserImage: UIImageView!
     @IBOutlet weak var nameTextField: AnimatableTextField!
     @IBOutlet weak var emailTextField: AnimatableTextField!
     @IBOutlet weak var passwordTextField: AnimatableTextField!
     @IBOutlet weak var passwordTextField2: AnimatableTextField!
+    @IBOutlet weak var selectImageLbl: UILabel!
     
     //VARIABLES
     var isPicked : Bool = false
@@ -35,8 +35,8 @@ class SignUpViewController: UIViewController, FusumaDelegate{
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.pickImage(_:)))
         tap.numberOfTapsRequired = 1
-        pickedUserImage.addGestureRecognizer(tap)
-        pickedUserImage.userInteractionEnabled = true
+        userImage.addGestureRecognizer(tap)
+        userImage.userInteractionEnabled = true
         imagePicker = FusumaViewController()
         imagePicker.delegate = self
     }
@@ -60,7 +60,7 @@ class SignUpViewController: UIViewController, FusumaDelegate{
             let password = passwordTextField.text where password != "" ,
             let password2 = passwordTextField2.text where password2 != "",
             let username = nameTextField.text where username != "",
-            let image = userImage.image{
+            let image = userImage.image where image != UIImage(named : "user-icon-placeholder"){
             
             if password2 == password {
                 DataService.instance.REF_BASE.authUser(email, password: password, withCompletionBlock: { error,authData in
@@ -101,7 +101,7 @@ class SignUpViewController: UIViewController, FusumaDelegate{
             
             }
         }else {
-            if userImage.image == nil {
+            if userImage.image == UIImage(named : "user-icon-placeholder") {
             self.showErrorAlert("Select Profile Image")
             }else {
                 self.showErrorAlert("Fill All Areas!")}
@@ -117,11 +117,9 @@ class SignUpViewController: UIViewController, FusumaDelegate{
     }
   
     func fusumaImageSelected(image: UIImage) {
-        
-        userImage.hidden = false
-        pickedUserImage.image = UIImage(named: "")
+        isPicked = true
+        selectImageLbl.hidden = true
         userImage.image = image
-      
         print("Image selected")
     }
     
