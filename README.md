@@ -5,9 +5,9 @@ Firebase is Google's real time NoSQL Backend as a Service (BaaS) platform that c
 
 
 ![screen 1](https://github.com/yusufkildan/Firesocial/blob/master/App%20Photos/1.png)
-![screen 2](https://www.dropbox.com/home?preview=2.png)
-![screen 3](https://www.dropbox.com/home?preview=3.png)
-![screen 4](https://www.dropbox.com/home?preview=5.png)
+![screen 2](https://github.com/yusufkildan/Firesocial/blob/master/App%20Photos/2.png)
+![screen 3](https://github.com/yusufkildan/Firesocial/blob/master/App%20Photos/3.png)
+![screen 4](https://github.com/yusufkildan/Firesocial/blob/master/App%20Photos/5.png)
 
 **Setup**
 
