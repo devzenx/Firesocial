@@ -48,6 +48,8 @@ class PostTableViewCell: UITableViewCell {
             dispatch_async(dispatch_get_main_queue()) {
                 self.postDescriptionLbl.text = post.postDescription
                 self.likeLbl.text = "\(post.likes)"
+                self.publishTimeLbl.text = NSDate().timeConverter(self.post.timeStamp, numericDates: false)
+               print(self.post.timeStamp)
             }
             mainImageView.kf_showIndicatorWhenLoading = true
             if let mainImageUrl = NSURL(string: post.imageUrl) {

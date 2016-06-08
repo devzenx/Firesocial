@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 class Post {
     private var _postDescription : String!
@@ -17,6 +18,7 @@ class Post {
     private var _postKey : String!
     private var _postRef : Firebase!
     private var _userId : String!
+    private var _timeStamp : String!
     
     var postDescription : String {
         if _postDescription == nil {
@@ -52,6 +54,10 @@ class Post {
     var userId : String {
         return _userId
     }
+    
+    var timeStamp : String {
+        return _timeStamp
+    }
     init(description : String , imageUrl : String , username : String) {
         self._imageUrl = imageUrl
         self._postDescription = description
@@ -75,7 +81,12 @@ class Post {
         if let userId = dictionary["user"] as? String {
             self._userId = userId
         }
+        
+        if let timeStamp = dictionary["timeStamp"] as? String {
+            self._timeStamp = timeStamp
+        }
        _postRef = DataService.instance.REF_POST.childByAppendingPath(self.postKey)
+        
     }
     
     func adjustLike(addLike : Bool){

@@ -18,4 +18,4 @@ let ERROR_WRONG_PASSWORD = -6
 let KEY_UID = "uid"
 
 //Alert
-let ERROR_ALERT_FONT = UIFont(name: "Avenir-Light", size: 13.0)
+let ERROR_ALERT_FONT : UIFont = UIFont(name: "Avenir-Light", size: 13.0)!

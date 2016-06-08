@@ -11,6 +11,7 @@
 		9900BBDA1D063B7F00EBD706 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9900BBD91D063B7F00EBD706 /* User.swift */; };
 		99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99296E231D041BC2007CE6E5 /* LoginViewController.swift */; };
 		99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99296E251D04215E007CE6E5 /* SignUpViewController.swift */; };
+		99B0C1571D0818F800E9B5A9 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0C1561D0818F800E9B5A9 /* TimeConverter.swift */; };
 		99CAEF041D04366000DDFA3E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAEF031D04366000DDFA3E /* DataService.swift */; };
 		99CAEF051D043C3600DDFA3E /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99296E271D0430D4007CE6E5 /* Firebase.framework */; };
 		99CAEF071D043CC600DDFA3E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAEF061D043CC600DDFA3E /* libicucore.tbd */; };
@@ -34,6 +35,7 @@
 		99296E231D041BC2007CE6E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		99296E251D04215E007CE6E5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		99296E271D0430D4007CE6E5 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		99B0C1561D0818F800E9B5A9 /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		99CAEF031D04366000DDFA3E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		99CAEF061D043CC600DDFA3E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		99CAEF081D043CD100DDFA3E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -159,6 +161,7 @@
 				99296E211D041B9F007CE6E5 /* View */,
 				99296E201D041B97007CE6E5 /* Controller */,
 				99E3DDF81D0408E300C79C8D /* AppDelegate.swift */,
+				99B0C1561D0818F800E9B5A9 /* TimeConverter.swift */,
 				99E3DDFC1D0408E300C79C8D /* Main.storyboard */,
 				99E3DDFF1D0408E300C79C8D /* Assets.xcassets */,
 				99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */,
@@ -295,6 +298,7 @@
 				99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */,
 				99E8B26B1D056EAA0072A314 /* PostTableViewCell.swift in Sources */,
 				99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */,
+				99B0C1571D0818F800E9B5A9 /* TimeConverter.swift in Sources */,
 				99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */,
 				99E8B26D1D0573A80072A314 /* Post.swift in Sources */,
 				99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */,

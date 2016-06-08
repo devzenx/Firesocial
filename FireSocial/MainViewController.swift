@@ -96,7 +96,8 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         if let postText = postTxt.text where postText != "" {
             if isPicked {
                 UploadImageService.instance.upload(pickedImage.image!, completion: { (result) in
-                    let post = ["imageUrl" : result , "likes" : 0 ,"postDescription" : postText,"user" : NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)!]
+                    let timeStamp = "\(NSDate().timeIntervalSince1970)"
+                    let post = ["imageUrl" : result , "likes" : 0 ,"postDescription" : postText,"user" : NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)!,"timeStamp" : timeStamp]
                     let postRef = DataService.instance.REF_POST.childByAutoId()
                     postRef.setValue(post)
                     postRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
