@@ -1,4 +1,4 @@
-# Firesocial
+# Firesocial(In the development process)
 Firesocial is an Photo sharing  app that allows millions of users to share photo and interact with each other at the same time.
 
 Firebase is Google's real time NoSQL Backend as a Service (BaaS) platform that can stream data to millions of users at the same time through the power of Websockets!
