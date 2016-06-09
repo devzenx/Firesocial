@@ -152,7 +152,19 @@ class PostTableViewCell: UITableViewCell {
             }else {
                 actionSheet.title = "Share or Configure"
                 actionSheet.addAction(UIAlertAction(title: "Edit this post", style: UIAlertActionStyle.Default, handler: { (action) in
+                    let alert = UIAlertController(title: "Edit your post", message: "Enter post description", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addTextFieldWithConfigurationHandler({ (textField) in
+                        textField.placeholder = "Post desc."
+                    })
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: { (_) in
+                        let newDescription = alert.textFields![0].text!
+                        let post = ["imageUrl" : self.post.imageUrl, "likes" : self.post.likes ,"postDescription" : newDescription,"user" : NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)!,"timeStamp" : self.post.timeStamp]
+                        DataService.instance.REF_POST.childByAppendingPath(self.post.postKey).updateChildValues(post)
+                       
+                    }))
                     
+                     UIApplication.sharedApplication().keyWindow?.currentViewController!.presentViewController(alert, animated: true, completion: nil)
                 }))
                 
                 actionSheet.addAction(UIAlertAction(title: "Delete this post", style: UIAlertActionStyle.Destructive, handler: { (action) in
