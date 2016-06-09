@@ -147,6 +147,7 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
     
     func refresh(sender : AnyObject) {
         tableView.reloadData()
+        
         refreshController.endRefreshing()
     }
   

@@ -701,6 +701,9 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="more:" destination="XtJ-Q6-xMG" eventType="touchUpInside" id="bIs-5y-uLg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

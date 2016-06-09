@@ -10,7 +10,8 @@ import UIKit
 import IBAnimatable
 import Kingfisher
 import Firebase
-
+import Social
+import KRProgressHUD
 class PostTableViewCell: UITableViewCell {
   
     @IBOutlet weak var usernameLbl: UILabel!
@@ -25,6 +26,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var commentLbl: UILabel!
     
     var likeRef : Firebase!
+    var postRef : Firebase!
     var post : Post!
     var user : User!
     
@@ -45,11 +47,12 @@ class PostTableViewCell: UITableViewCell {
          self.setUserProfile()
         
             likeRef = DataService.instance.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
+        postRef = DataService.instance.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(post.postKey)
             dispatch_async(dispatch_get_main_queue()) {
                 self.postDescriptionLbl.text = post.postDescription
                 self.likeLbl.text = "\(post.likes)"
-                self.publishTimeLbl.text = NSDate().timeConverter(self.post.timeStamp, numericDates: false)
-               print(self.post.timeStamp)
+                self.publishTimeLbl.text = NSDate().timeConverter(self.post.timeStamp, numericDates: true)
+              
             }
             mainImageView.kf_showIndicatorWhenLoading = true
             if let mainImageUrl = NSURL(string: post.imageUrl) {
@@ -111,5 +114,57 @@ class PostTableViewCell: UITableViewCell {
         })
     }
     
+    @IBAction func more(sender : AnyObject) {
+        let actionSheet = UIAlertController(title: "Share", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Share on Facebook", style: UIAlertActionStyle.Default, handler: { (action) in
+            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
+                // Initialize the default view controller for sharing the post.
+                let facebookComposeVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                
+                facebookComposeVC.setInitialText(self.post.postDescription)
+                facebookComposeVC.addImage(self.mainImageView.image)
+                UIApplication.sharedApplication().keyWindow?.currentViewController!.presentViewController(facebookComposeVC, animated: true, completion: nil)
+            }
+            else {
+                 KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.Black, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Login first!")
+            }
+            
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Share on Twitter", style: UIAlertActionStyle.Default, handler: { (action) in
+            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+                // Initialize the default view controller for sharing the post.
+                let twitterComposeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                
+               twitterComposeVC.setInitialText(self.post.postDescription)
+                twitterComposeVC.addImage(self.mainImageView.image)
+                 UIApplication.sharedApplication().keyWindow?.currentViewController!.presentViewController(twitterComposeVC, animated: true, completion: nil)
+            }
+            else {
+               KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.Black, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Login first!")
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) in
+            
+        }))
+        postRef.observeSingleEventOfType(.Value) { (snapshot : FDataSnapshot!) in
+            if (snapshot.value as? NSNull) != nil {
+                
+            }else {
+                actionSheet.title = "Share or Configure"
+                actionSheet.addAction(UIAlertAction(title: "Edit this post", style: UIAlertActionStyle.Default, handler: { (action) in
+                    
+                }))
+                
+                actionSheet.addAction(UIAlertAction(title: "Delete this post", style: UIAlertActionStyle.Destructive, handler: { (action) in
+                  DataService.instance.REF_POST.childByAppendingPath(self.post.postKey).removeValue()
+                }))
 
+            }
+            
+            
+        }
+        
+        UIApplication.sharedApplication().keyWindow?.currentViewController!.presentViewController(actionSheet, animated: true, completion: nil)
+
+    }
 }
