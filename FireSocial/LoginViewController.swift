@@ -28,6 +28,7 @@ class LoginViewController: UIViewController  {
   
     @IBAction func login(sender: AnimatableButton) {
         KRProgressHUD.show(progressHUDStyle: KRProgressHUDStyle.Black, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Loading", image: nil)
+        
         if let email = emailTextField.text where email != "" ,let password = passwordTextField.text where password != "" {
             DataService.instance.REF_BASE.authUser(email, password: password, withCompletionBlock: { error, authData in
                 
@@ -36,17 +37,19 @@ class LoginViewController: UIViewController  {
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: KEY_UID)
                     KRProgressHUD.showSuccess(message: "Success!")
                     self.performSegueWithIdentifier("loginToMain", sender: nil)
-                    
-                }else if ERROR_WRONG_PASSWORD == error.code{
-                   self.showErrorAlert("Wrong Password!")
-                }else if ERROR_INVALID_EMAIL == error.code {
-                    self.showErrorAlert("Invalid Email!")
-                }else if ERROR_USER_NOT_EXIST == error.code {
-                   self.showErrorAlert("SignUp Before Login!")
+  
                 }else {
-                    print(error)
+                    switch error.code {
+                        case ERROR_WRONG_PASSWORD :
+                            self.showErrorAlert("Wrong Password!")
+                        case ERROR_INVALID_EMAIL :
+                            self.showErrorAlert("Invalid Email!")
+                        case ERROR_USER_NOT_EXIST :
+                            self.showErrorAlert("SignUp Before Login!")
+                        default:
+                             print(error)
+                    }
                 }
-                
             })
         }else {
             KRProgressHUD.showError(progressHUDStyle: KRProgressHUDStyle.BlackColor, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Fill All Areas!")
@@ -65,8 +68,8 @@ class LoginViewController: UIViewController  {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Reset", style: UIAlertActionStyle.Default, handler: { action in
             
-            let ref = DataService.instance.REF_BASE
-            ref.resetPasswordForUser(alert.textFields![0].text!, withCompletionBlock: { error in
+            
+            DataService.instance.REF_BASE.resetPasswordForUser(alert.textFields![0].text!, withCompletionBlock: { error in
                 if error == nil {
                     KRProgressHUD.showSuccess(progressHUDStyle: KRProgressHUDStyle.Black, maskType: KRProgressHUDMaskType.Black, activityIndicatorStyle: KRProgressHUDActivityIndicatorStyle.Black, font: ERROR_ALERT_FONT, message: "Check your email")
                 }else if ERROR_INVALID_EMAIL == error.code {

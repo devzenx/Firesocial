@@ -8,12 +8,16 @@
 
 import Foundation
 import Firebase
+import UIKit
+import Kingfisher
 
 let BASE_URL = "https://fire-social.firebaseio.com"
 class DataService {
     private var _REF_BASE : Firebase = Firebase(url: "\(BASE_URL)")
     private var _REF_USER : Firebase = Firebase(url: "\(BASE_URL)/users")
     private var _REF_POST : Firebase = Firebase(url: "\(BASE_URL)/posts")
+   
+ 
     static let instance = DataService()
     
     var REF_BASE : Firebase {
@@ -33,9 +37,20 @@ class DataService {
             return Firebase()
         }
     }
-    
+ 
     func createUser(uid : String ,user : Dictionary<String, AnyObject>){
         _REF_USER.childByAppendingPath(uid).setValue(user)
+    }
+    
+    func getUserData(userId : String, completion : (user : User)->()) {
+        
+        DataService.instance.REF_USER.childByAppendingPath(userId).observeEventType(.Value, withBlock: { (snapshot) in
+            if let user = snapshot.value as? Dictionary<String, AnyObject> {
+                
+                let user = User(email: user["email"] as! String, profileImage: user["profileImageUrl"] as! String, username: user["username"] as! String)
+                completion(user: user)
+            }
+        })
     }
     
  

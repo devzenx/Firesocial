@@ -26,12 +26,13 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
     var imagePicker : FusumaViewController!
     var imageLink : String!
     var refreshController : UIRefreshControl!
+   
     
     
     //FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+   
         tableView.delegate = self
         tableView.dataSource = self
         refreshController = UIRefreshControl()
@@ -75,6 +76,8 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as? PostTableViewCell {
             let post = posts[indexPath.row]
             cell.configureCell(post)
+            cell.parentVC = self
+       
             return cell
         }else {
             return PostTableViewCell()
@@ -97,7 +100,7 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
             if isPicked {
                 UploadImageService.instance.upload(pickedImage.image!, completion: { (result) in
                     let timeStamp = "\(NSDate().timeIntervalSince1970)"
-                    let post = ["imageUrl" : result , "likes" : 0 ,"postDescription" : postText,"user" : NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)!,"timeStamp" : timeStamp]
+                    let post = ["imageUrl" : result , "likes" : 0 ,"postDescription" : postText,"user" : NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)!,"timeStamp" : timeStamp,"commentCount" : 0]
                     let postRef = DataService.instance.REF_POST.childByAutoId()
                     postRef.setValue(post)
                     postRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
@@ -150,5 +153,13 @@ class MainViewController: UIViewController ,UITableViewDelegate , UITableViewDat
         
         refreshController.endRefreshing()
     }
-  
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "postToComments" {
+            if let commentRef = sender as? Firebase{
+                let target = segue.destinationViewController as! CommentViewController
+                target.commentRef = commentRef
+          
+            }
+        }
+    }
 }

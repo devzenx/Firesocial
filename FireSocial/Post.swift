@@ -14,6 +14,7 @@ class Post {
     private var _postDescription : String!
     private var _imageUrl : String!
     private var _likes : Int!
+    private var _commentCount : Int!
     private var _username : String!
     private var _postKey : String!
     private var _postRef : Firebase!
@@ -58,6 +59,12 @@ class Post {
     var timeStamp : String {
         return _timeStamp
     }
+    var commentCount : Int {
+        if _commentCount == nil {
+            _commentCount = 0
+        }
+        return _commentCount
+    }
     init(description : String , imageUrl : String , username : String) {
         self._imageUrl = imageUrl
         self._postDescription = description
@@ -84,6 +91,9 @@ class Post {
         
         if let timeStamp = dictionary["timeStamp"] as? String {
             self._timeStamp = timeStamp
+        }
+        if let commentCount = dictionary["commentCount"] as? Int {
+            self._commentCount = commentCount
         }
        _postRef = DataService.instance.REF_POST.childByAppendingPath(self.postKey)
         

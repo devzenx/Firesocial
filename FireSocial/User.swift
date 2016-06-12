@@ -28,7 +28,7 @@ class User {
         return _profileImage
     }
     
-    init(email: String, profileImage: String, username: String,posts : Dictionary<String,Bool>?) {
+    init(email: String, profileImage: String, username: String) {
         self._username = username
         self._profileImage = profileImage
         self._email = email

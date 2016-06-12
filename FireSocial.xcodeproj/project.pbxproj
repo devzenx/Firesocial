@@ -22,6 +22,9 @@
 		99CAEF111D043D4300DDFA3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAEF101D043D4300DDFA3E /* Constants.swift */; };
 		99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAEF121D04434200DDFA3E /* MainViewController.swift */; };
 		99D026391D09E20900942481 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D026381D09E20900942481 /* Social.framework */; };
+		99D026481D0A84FA00942481 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D026471D0A84FA00942481 /* Comment.swift */; };
+		99D0264A1D0A921F00942481 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D026491D0A921F00942481 /* CommentViewController.swift */; };
+		99D0264C1D0A923400942481 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0264B1D0A923400942481 /* CommentTableViewCell.swift */; };
 		99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3DDF81D0408E300C79C8D /* AppDelegate.swift */; };
 		99E3DDFE1D0408E300C79C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFC1D0408E300C79C8D /* Main.storyboard */; };
 		99E3DE001D0408E300C79C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E3DDFF1D0408E300C79C8D /* Assets.xcassets */; };
@@ -46,6 +49,9 @@
 		99CAEF101D043D4300DDFA3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		99CAEF121D04434200DDFA3E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		99D026381D09E20900942481 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		99D026471D0A84FA00942481 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		99D026491D0A921F00942481 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		99D0264B1D0A923400942481 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		99E3DDF51D0408E300C79C8D /* FireSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E3DDF81D0408E300C79C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E3DDFD1D0408E300C79C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 				99296E231D041BC2007CE6E5 /* LoginViewController.swift */,
 				99296E251D04215E007CE6E5 /* SignUpViewController.swift */,
 				99CAEF121D04434200DDFA3E /* MainViewController.swift */,
+				99D026491D0A921F00942481 /* CommentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -102,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				99E8B26A1D056EAA0072A314 /* PostTableViewCell.swift */,
+				99D0264B1D0A923400942481 /* CommentTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 			children = (
 				99E8B26C1D0573A80072A314 /* Post.swift */,
 				9900BBD91D063B7F00EBD706 /* User.swift */,
+				99D026471D0A84FA00942481 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -135,6 +144,7 @@
 			children = (
 				99CAEF031D04366000DDFA3E /* DataService.swift */,
 				99F7D2021D04BB8800E4FFC7 /* UploadImageService.swift */,
+				99B0C1561D0818F800E9B5A9 /* TimeConverter.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -165,7 +175,6 @@
 				99296E211D041B9F007CE6E5 /* View */,
 				99296E201D041B97007CE6E5 /* Controller */,
 				99E3DDF81D0408E300C79C8D /* AppDelegate.swift */,
-				99B0C1561D0818F800E9B5A9 /* TimeConverter.swift */,
 				99E3DDFC1D0408E300C79C8D /* Main.storyboard */,
 				99E3DDFF1D0408E300C79C8D /* Assets.xcassets */,
 				99E3DE011D0408E300C79C8D /* LaunchScreen.storyboard */,
@@ -297,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D0264A1D0A921F00942481 /* CommentViewController.swift in Sources */,
 				99CAEF111D043D4300DDFA3E /* Constants.swift in Sources */,
 				99F7D2031D04BB8800E4FFC7 /* UploadImageService.swift in Sources */,
 				99296E261D04215E007CE6E5 /* SignUpViewController.swift in Sources */,
@@ -304,8 +314,10 @@
 				99296E241D041BC2007CE6E5 /* LoginViewController.swift in Sources */,
 				99B0C1571D0818F800E9B5A9 /* TimeConverter.swift in Sources */,
 				99CAEF131D04434200DDFA3E /* MainViewController.swift in Sources */,
+				99D026481D0A84FA00942481 /* Comment.swift in Sources */,
 				99E8B26D1D0573A80072A314 /* Post.swift in Sources */,
 				99E3DDF91D0408E300C79C8D /* AppDelegate.swift in Sources */,
+				99D0264C1D0A923400942481 /* CommentTableViewCell.swift in Sources */,
 				9900BBDA1D063B7F00EBD706 /* User.swift in Sources */,
 				99CAEF041D04366000DDFA3E /* DataService.swift in Sources */,
 			);
