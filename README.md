@@ -9,5 +9,6 @@ Firesocial is an Photo sharing  app that allows millions of users to share photo
 - [x] Login-Logout-Reset Password
 - [x] Comment
 - [x] Edit User Profile
+- [x] Share at Facebook or Twitter
 - [ ] Follow or add as a friend (Soon!)
 
